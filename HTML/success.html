@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Author info -->
+    <meta name="author" content="Ricky Contiga">
+    <meta name="description" content="A Valentines Day Website">
+
+    <!-- Page Details -->
+    <title>VALENTINES SUCCESS</title>
+    <link type="image/icon-x" rel="icon" href="./../Assets/hearts.png">
+    <link rel="stylesheet" href="./../CSS/styles.css">
+</head>
+
+<body class="dark-mode">
+
+    <div class="overlay">
+        <!-- Overlay Goes Here -->
+    </div>
+
+    <main>
+        <div class="name">
+            YAAY!
+        </div>
+
+        <div class="question">
+            See you on February the 14th
+        </div>
+
+        <div class="gif">
+            <img src="./../Assets/dance.gif" alt="Question GIF">
+        </div>
+
+        <div class="buttons">
+            <button id="same">Can't Wait</button>
+        </div>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script defer>
+        // Can't wait button
+        const wait = document.getElementById("same").addEventListener("click", (e) => {
+            alert("Same! We will have an amazing time. \nSee you then bitch ❤️!");
+
+            window.location.href = './letter.html';
+        });
+    </script>
+
+</body>
+
+</html>

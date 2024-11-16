@@ -1,0 +1,237 @@
+/* Charset */
+@charset 'UTF-8';
+
+/* THEMING */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --accent-color: red;
+    --transparent: transparent;
+}
+
+.dark-mode {
+    --background-color: #1E1E1E;
+    --text-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    background-image: url('./../Assets/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.overlay {
+    background-color: var(--background-color);
+    opacity: .35;
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    span {
+        text-transform: uppercase;
+    }
+
+    .special {
+        text-decoration: underline;
+    }
+}
+
+.question {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.gif {
+    margin: 1rem;
+
+    img {
+        width: 300px;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* CV Section */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    position: relative;
+    border: 1px solid var(--text-color);
+    border-radius: .7rem 0 .7rem 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    margin: 1rem .5rem;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--text-color);
+    transition: width .5s ease-in-out;
+    z-index: -1;
+}
+
+button:hover {
+    color: var(--background-color);
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+#no {
+    transition: all .4s ease-in-out;
+}
+
+/* LETTER STYLES */
+main {
+    position: relative;
+}
+
+.envelope {
+    border-left: 300px solid var(--background-color);
+    border-bottom: 100px solid var(--background-color);
+    border-right: 300px solid var(--background-color);
+    border-top: 150px solid var(--transparent);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.letter {
+    position: absolute;
+    width: 550px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    margin: 0 auto;
+    padding: 2rem 3rem 4.5rem;
+    bottom: 0;
+    left: 4.5%;
+    z-index: -1;
+    font-size: .9rem;
+    transition: all .8s ease-in-out;
+}
+
+.over-letter {
+    bottom: 45%;
+}
+
+.letter-stamp {
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-10px) translateY(-10px);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.gun-gif {
+    position: absolute;
+    display: none;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    p {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.show {
+    display: block;
+}
+
+/* RESPONSIVENESS */
+@media all and (max-width:683px) {
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .question {
+        font-size: 1.5rem;
+    }
+
+    .gif {
+        img {
+            width: 250px;
+        }
+    }
+
+    button {
+        font-size: .8rem;
+    }
+
+    .envelope {
+        border-left: 230px solid var(--background-color);
+        border-bottom: 80px solid var(--background-color);
+        border-right: 230px solid var(--background-color);
+        border-top: 130px solid var(--transparent);
+    }
+
+    .letter {
+        width: 420px;
+        font-size: .8rem;
+        padding: 1rem 2.5rem 4rem;
+    }
+
+    .letter-stamp{
+        width: 15px;
+        height: 15px;
+        transform: translate(-8px, -8px);
+    }
+
+    .gun-gif {
+        position: absolute;
+        /* display: none; */
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            width: 200px;
+        }
+    
+        p {
+            font-size: .8rem;
+        }
+    }
+
+}
